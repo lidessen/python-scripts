@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\Users\\catli\\Miniconda3\\python.exe",
+    "azure-iot-edge.defaultPlatform": {
+        "platform": "amd64",
+        "alias": null
+    }
+}
