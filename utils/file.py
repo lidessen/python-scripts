@@ -13,6 +13,11 @@ def get_files(path='./'):
     return result
 
 
+def read_lines(path, count: int):
+    file = open(path, "rt", encoding="utf-8")
+    return file.readlines(count)
+
+
 def __main__(argv=sys.argv):
     if (len(argv) > 1):
         print_to_line(get_files(argv[1]))
