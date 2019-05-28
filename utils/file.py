@@ -18,6 +18,11 @@ def read_lines(path, count: int):
     return file.readlines(count)
 
 
+def read_all(path):
+    file = open(path, "rt", encoding="utf-16-le")
+    return file.read()
+
+
 def __main__(argv=sys.argv):
     if (len(argv) > 1):
         print_to_line(get_files(argv[1]))
