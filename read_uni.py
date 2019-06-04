@@ -20,7 +20,7 @@ def process_one(path):
 
     with open("./output_en.txt", "a", encoding="utf-8") as file_en:
         file_en.write("\n".join(res_en))
-    with open("./output_zh.txt", "a", encoding="utf-8") as file_zh:
+    with open("./output_zh-CN.txt", "a", encoding="utf-8") as file_zh:
         file_zh.write("\n".join(res_zh))
 
 
