@@ -38,6 +38,7 @@ def __main__(argv=sys.argv):
     else:
         print_to_line(get_files())
 
+
 def check_path(path):
     return os.path.exists(path)
 
