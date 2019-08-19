@@ -1,11 +1,13 @@
 import sys
+import os
 from project_analyze import get_package_json, get_dependencies
 
 
 def main(argv=None):
     if argv is None:
         argv = sys.argv
-    for item in get_dependencies(get_package_json(argv[1])):
+    path = os.path.join(argv[1], 'package.json')
+    for item in get_dependencies(get_package_json(path)):
         print('%s: %s' % (item.name, item.version))
 
 
