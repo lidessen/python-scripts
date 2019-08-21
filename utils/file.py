@@ -1,16 +1,29 @@
 import sys
 import getopt
 import os
+import re
 from utils import print_to_line
 
 
-def get_files(path='./'):
+def get_files(path='./', pattern=r".*"):
     result = []
+    pattern = re.compile(pattern)
     if os.path.exists(path):
         for (root, dummy, files) in os.walk(path):
             for file in files:
-                result.append(os.path.join(root, file))
+                if (re.match(pattern, file) is not None):
+                    result.append(os.path.join(root, file))
     return result
+
+
+def get_component_name(files: list):
+    list = []
+    pattern = re.compile(r"(?<=export\sclass\s)[A-Za-z0-9_]+Component(?=\s)")
+    for file in files:
+        with open(file, 'rt') as f:
+            for item in re.findall(pattern, f.read()):
+                list.append(item)
+    return list
 
 
 def get_dirs(path='./'):
