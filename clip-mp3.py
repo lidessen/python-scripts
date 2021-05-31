@@ -25,7 +25,7 @@ endTime = parseTime(end_str) * 1000
 dir_name = os.path.dirname(os.path.realpath(path))
 
 # Opening file and extracting segment
-song = AudioSegment.from_mp3(path)
+song = AudioSegment.from_file(path)
 extract = song[startTime:endTime]
 
 # Saving
